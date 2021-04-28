@@ -1,0 +1,8 @@
+alsa-lib
+file make
+glew
+gtk+3
+iconv make
+sdl2
+xa make
+zlib

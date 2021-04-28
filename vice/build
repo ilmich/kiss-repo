@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+./configure \
+	--prefix=/usr \
+	--enable-pdf-docs=no \
+	--enable-sdlui2 \
+	--enable-x64 \
+	--without-pulse
+
+make
+make install DESTDIR=$1
