@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+cc iconv.c -o iconv
+install -Dm 755 iconv  "$1/usr/bin/iconv"
