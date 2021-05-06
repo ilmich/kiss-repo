@@ -1,0 +1,15 @@
+atk
+cairo
+fontconfig
+freetype-harfbuzz
+gdk-pixbuf
+glib
+gtk+2
+libICE
+libSM
+libX11
+libXext
+libXrender
+libxml2
+pango
+python2 make
