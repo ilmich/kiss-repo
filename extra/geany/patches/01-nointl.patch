@@ -1,0 +1,32 @@
+diff -rupN geany-1.37.1/Makefile.am geany-1.37.1-new/Makefile.am
+--- geany-1.37.1/Makefile.am	2020-11-08 17:14:52.000000000 +0000
++++ geany-1.37.1-new/Makefile.am	2021-05-06 10:31:19.969696610 +0000
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS = ctags scintilla src plugins icons po doc data tests
++SUBDIRS = ctags scintilla src plugins icons doc data
+ 
+ AUTOMAKE_OPTIONS =	1.7
+ 
+@@ -78,7 +78,3 @@ rpm: dist
+ pkgconfig_DATA = geany.pc
+ pkgconfigdir = $(libdir)/pkgconfig
+ 
+-desktopdir = $(datadir)/applications
+-desktop_in_files = geany.desktop
+-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+-@INTLTOOL_DESKTOP_RULE@
+diff -rupN geany-1.37.1/configure.ac geany-1.37.1-new/configure.ac
+--- geany-1.37.1/configure.ac	2020-11-08 17:14:52.000000000 +0000
++++ geany-1.37.1-new/configure.ac	2021-05-06 10:30:58.201696315 +0000
+@@ -132,9 +132,6 @@ GEANY_CHECK_VTE
+ GEANY_CHECK_MAC_INTEGRATION
+ GEANY_CHECK_THE_FORCE dnl hehe
+ 
+-# i18n
+-GEANY_I18N
+-
+ # double eval since datarootdir is usually defined as ${prefix}/share
+ AM_COND_IF([MINGW],
+   [pkgdatadir='${prefix}/data'],

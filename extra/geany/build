@@ -1,0 +1,15 @@
+#!/bin/sh
+
+patch -p1 < 01-nointl.patch
+
+autoheader
+automake
+autoreconf
+
+./configure \
+    --prefix=/usr \
+    --disable-nls \
+    --enable-gtk2
+
+make
+make DESTDIR="$1" install
